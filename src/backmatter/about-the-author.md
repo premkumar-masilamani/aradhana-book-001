@@ -1,5 +1,5 @@
 # About the Author {.unnumbered}
 
-**Aradhana Premkumar** is a young storyteller with a passion for gripping mysteries, suspenseful thrillers, and unforgettable characters. When she is not weaving intricate puzzles and crafting brave sleuths, she enjoys reading, spending time with family and friends, and brainstorming her next big adventure.
+**Aradhana Premkumar** is a 10-year-old girl who loves reading and writing as much as her art and craft. Her favourite stories are the ones with secrets, twists, and characters who keep you guessing. She enjoys playing with her friends, riding motorcycles, telling jokes and giving witty responses to her father. She loves her family and friends and always stands up for them.
 
 *What Not To Do When There Is A Murder In Town* is her debut mystery novel.

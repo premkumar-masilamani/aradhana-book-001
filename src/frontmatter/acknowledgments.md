@@ -1,6 +1,8 @@
 # Acknowledgments {.unnumbered}
 
-I want to acknowledge my Appa and Amma for helping me read and edit my stories. I love you guys.
+I want to acknowledge my Appa and Amma for helping me read and edit my stories. 
+
+*I love you guys.*
 
 Next, I want to acknowledge my teachers for cheering me on and waiting for the physical copy.
 
