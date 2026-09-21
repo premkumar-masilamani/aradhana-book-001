@@ -24,7 +24,7 @@ They searched for a while until Riana moved a photo with **Jesus Christ** on it.
 
 They lowered themselves into the staircase. On the table in the centre, a folded note was there. It read:
 
-<hr>
+<hr/>
 
 _Hello again, Idiots._
 
@@ -34,7 +34,7 @@ _Bad luck,_
 
 _You know the name_
 
-<hr>
+<hr/>
 
 They thought for a while. Riana was the first one to speak.
 
