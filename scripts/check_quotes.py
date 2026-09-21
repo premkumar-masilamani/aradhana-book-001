@@ -3,7 +3,11 @@
 import glob
 import sys
 
-files = sorted(glob.glob("src/chapters/*.md") + glob.glob("src/backmatter/*.md"))
+files = sorted(
+    glob.glob("src/frontmatter/*.md") +
+    glob.glob("src/chapters/*.md") +
+    glob.glob("src/backmatter/*.md")
+)
 bad_found = False
 
 for f in files:

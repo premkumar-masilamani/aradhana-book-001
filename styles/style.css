@@ -8,16 +8,14 @@
     padding: 0;
 }
 
-body#cover,
-body.fullpage-cover-body {
+body#cover {
     margin: 0 !important;
     padding: 0 !important;
     text-align: center;
     background-color: #000000;
 }
 
-#cover-image,
-.fullpage-cover-container {
+#cover-image {
     width: 100vw;
     height: 100vh;
     margin: 0;
@@ -27,17 +25,15 @@ body.fullpage-cover-body {
     align-items: center;
 }
 
-#cover-image svg,
-.fullpage-cover-container svg {
+#cover-image svg {
     width: 100%;
     height: 100%;
     max-width: 100vw;
     max-height: 100vh;
 }
 
-/* Hide heading on dedicated full-page cover sections */
-.back-cover-section > h1,
-.front-cover-section > h1 {
+/* Hide heading on dedicated full-page back cover section */
+.back-cover-section > h1 {
     display: none;
 }
 
@@ -53,6 +49,7 @@ section.back-cover-section {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #000000;
 }
 
 section.back-cover-section p {
@@ -79,7 +76,7 @@ img.fullpage-cover-image {
 /* 2. Reader-Controlled Body Typography
    NOTE: font-family and font-size are deliberately omitted here so that
    the reader application (Apple Books, Kindle, Kobo, etc.) renders text
-   according to the reader's user preferences and system settings. */
+   according to user preferences and system settings. */
 body {
     margin: 5% 7%;
     line-height: 1.5;
@@ -137,17 +134,45 @@ hr.ornamental::after {
     opacity: 0.6;
 }
 
-/* 5. Title Page & Backmatter */
+/* 5. Title Page */
 section.titlepage {
     text-align: center;
-    margin-top: 20%;
+    box-sizing: border-box;
+    padding-top: 12vh;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 section.titlepage h1.title {
-    margin-bottom: 0.5em;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0.4em;
+    page-break-before: avoid;
+    break-before: avoid;
 }
 
 section.titlepage p.author {
-    font-style: italic;
+    text-align: center !important;
+    text-indent: 0 !important;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-style: normal;
+    letter-spacing: 0.05em;
+    margin-top: 0.8em;
+    margin-bottom: 0;
+}
+
+section.titlepage div.rights,
+section.titlepage p.rights {
+    text-align: center;
     text-indent: 0;
+    font-size: 0.75em;
+    opacity: 0.75;
+    margin-top: auto;
+    padding-top: 30vh;
+    margin-bottom: 2em;
 }
