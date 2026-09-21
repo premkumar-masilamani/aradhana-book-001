@@ -30,18 +30,18 @@
   // ---------------------------------------------------------------------------
   set page(
     paper: "a4",
-    margin: (top: 35mm, bottom: 25mm, left: 25mm, right: 25mm),
+    margin: (top: 40mm, bottom: 25mm, left: 28mm, right: 28mm),
     header: none,
     footer: none,
   )
   
   align(center)[
-    #v(4cm)
-    #text(size: 26pt, weight: "bold")[#title]
+    #v(3.5cm)
+    #text(size: 32pt, weight: "bold")[#title]
     #v(1.5cm)
-    #text(size: 18pt, weight: "bold")[#author]
+    #text(size: 20pt, weight: "bold")[#author]
     #v(1fr)
-    #text(size: 10pt, fill: luma(80))[Copyright © 2026 #author. All rights reserved.]
+    #text(size: 12pt, fill: luma(80))[Copyright © 2026 #author. All rights reserved.]
   ]
 
   pagebreak()
@@ -49,15 +49,16 @@
   // ---------------------------------------------------------------------------
   // 3. INTERIOR PAGES (Acknowledgments, Chapters 1-17, About the Author)
   // ---------------------------------------------------------------------------
+  // Margins: 28mm on A4 scales to ~20mm on A5, allowing 5mm spine binding gutter + 15mm margin
   set page(
     paper: "a4",
-    margin: (top: 25mm, bottom: 25mm, left: 25mm, right: 25mm),
+    margin: (top: 25mm, bottom: 25mm, left: 28mm, right: 28mm),
     header: context {
       let current-page = counter(page).get().first()
       // Suppress header on first interior page (Acknowledgments)
       if current-page > 1 {
         align(center)[
-          #text(size: 8.5pt, fill: luma(110), tracking: 0.1em)[
+          #text(size: 10pt, fill: luma(110), tracking: 0.1em)[
             #smallcaps[What Not To Do When There Is A Murder In Town]
           ]
         ]
@@ -65,7 +66,7 @@
     },
     footer: context {
       align(center)[
-        #text(size: 9.5pt, fill: luma(60))[#counter(page).display("1")]
+        #text(size: 11pt, fill: luma(60))[#counter(page).display("1")]
       ]
     },
   )
@@ -73,23 +74,23 @@
   // Reset page counter for interior reading flow
   counter(page).update(1)
 
-  // Typography settings
-  set text(size: 11.5pt, lang: "en")
+  // Typography settings: 15.5pt on A4 scales down by 70.7% to standard 11pt on A5
+  set text(size: 15.5pt, lang: "en")
   set par(
     justify: false,
-    leading: 0.95em,
-    spacing: 1.4em,
+    leading: 0.85em,
+    spacing: 1.3em,
     first-line-indent: 0pt,
   )
 
   // Chapter Headings (Each chapter starts on a new page)
   show heading.where(level: 1): it => {
     pagebreak(weak: true)
-    v(1.8cm)
+    v(1.4cm)
     align(center)[
-      #text(size: 20pt, weight: "bold")[#it.body]
+      #text(size: 24pt, weight: "bold")[#it.body]
     ]
-    v(1.2cm)
+    v(0.9cm)
   }
 
   // Dividers (---)
