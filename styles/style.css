@@ -156,3 +156,15 @@ section.titlepage p.rights {
     padding-top: 30vh;
     margin-bottom: 2em;
 }
+
+/* 6. Blockquotes & Poetry */
+blockquote {
+    margin: 1.2em 0 1.2em 2em;
+    padding: 0;
+}
+
+blockquote p {
+    margin: 0;
+    line-height: 1.8;
+    text-indent: 0 !important;
+}

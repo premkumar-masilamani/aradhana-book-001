@@ -24,9 +24,9 @@ The next thing you know, she started gluing it. She noticed the photo on the cup
 
 On the other side, it said...
 
-> *Hello again, idiot.*
-> *Here's your next clue.*
-> *Call both your friends.*
+> *Hello again, idiot.*<br>
+> *Here's your next clue.*<br>
+> *Call both your friends.*<br>
 > *Give them the cue.*
 
 Max came on a video call with Riana and Jack.
@@ -37,16 +37,16 @@ Max spoke first.
 
 Next, Riana spoke. "I got a poem too"
 
-> *Spices and meat.*
-> *Sweet, sweet smells.*
-> *Call your friend Max.*
+> *Spices and meat.*<br>
+> *Sweet, sweet smells.*<br>
+> *Call your friend Max.*<br>
 > *Get her some help.*
 
 Lastly Jack. "I got one too!"
 
-> *You're a scared boy.*
-> *But you reach the high shelves.*
-> *A girl will find someone.*
+> *You're a scared boy.*<br>
+> *But you reach the high shelves.*<br>
+> *A girl will find someone.*<br>
 > *Who needs your help.*
 
 Before Max cut the call, she said, "Both of you guys bailed on school, right? Come to my house. No one is home."
