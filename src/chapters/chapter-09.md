@@ -18,10 +18,10 @@ Jack stood silently until...
 
 Max showed one of his recent poems:
 
-> *First the mouth, no drop of sound.*  
-> *Next the eyes, not a gleam of light.*  
-> *Next the neck with a long gray line.*  
-> *They fall into your hands, they seem fine.*  
+> *First the mouth, no drop of sound.*
+> *Next the eyes, not a gleam of light.*
+> *Next the neck with a long gray line.*
+> *They fall into your hands, they seem fine.*
 
 Jack read it out loud.
 

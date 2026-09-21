@@ -62,29 +62,21 @@ img.fullpage-cover-image {
 }
 
 /* 2. Reader-Controlled Body Typography
-   NOTE: font-family and font-size are deliberately omitted here so that
+   NOTE: font-family and font-size are deliberately omitted so that
    the reader application (Apple Books, Kindle, Kobo, etc.) renders text
    according to user preferences and system settings. */
 body {
     margin: 5% 7%;
-    line-height: 1.5;
+    line-height: 1.8;
 }
 
-/* Standard fiction paragraph indentation */
+/* Flush-left paragraphs with generous line and paragraph spacing (ideal for dialogue & conversations) */
 p {
     margin-top: 0;
-    margin-bottom: 0;
-    text-align: justify;
-    text-indent: 1.5em;
-}
-
-/* Suppress indentation on opening paragraphs, scene breaks, and headings */
-h1 + p,
-h2 + p,
-h3 + p,
-hr + p,
-p.no-indent {
-    text-indent: 0;
+    margin-bottom: 0.85em;
+    text-align: left;
+    text-indent: 0 !important;
+    line-height: 1.8;
 }
 
 /* 3. Headings & Chapter Breaks */
