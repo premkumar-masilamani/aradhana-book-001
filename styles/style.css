@@ -89,6 +89,28 @@ h1 {
     break-before: page;
 }
 
+/* Ornamental star divider below chapter titles */
+h1::after {
+    display: block;
+    content: "✦ ✦ ✦";
+    font-size: 0.6em;
+    letter-spacing: 0.5em;
+    padding-left: 0.5em;
+    opacity: 0.6;
+    margin-top: 1em;
+    margin-bottom: 0.8em;
+    font-weight: normal;
+    text-align: center;
+}
+
+/* Suppress ornamental divider on Title Page and Back Cover */
+section.titlepage h1::after,
+section.titlepage h1.title::after,
+.back-cover-section h1::after {
+    display: none !important;
+    content: none !important;
+}
+
 /* 4. Scene Breaks & Dividers */
 hr {
     border: 0;
@@ -106,12 +128,16 @@ hr.ornamental {
     background: transparent;
     text-align: center;
     margin: 2em 0;
+    overflow: visible;
 }
 
 hr.ornamental::after {
+    display: block;
     content: "✦ ✦ ✦";
     letter-spacing: 0.5em;
+    padding-left: 0.5em;
     opacity: 0.6;
+    font-size: 1em;
 }
 
 /* 5. Title Page */

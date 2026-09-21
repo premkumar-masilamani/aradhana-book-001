@@ -89,8 +89,10 @@
     v(1.4cm)
     align(center)[
       #text(size: 24pt, weight: "bold")[#it.body]
+      #v(0.6em)
+      #text(font: "Arial Unicode MS", size: 12pt, fill: luma(110), tracking: 0.5em)[✦ ✦ ✦]
     ]
-    v(0.9cm)
+    v(1.0cm)
   }
 
   // Dividers (---)
