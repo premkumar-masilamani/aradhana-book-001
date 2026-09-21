@@ -1,0 +1,129 @@
+// ==============================================================================
+// Typst Template for "What Not To Do When There Is A Murder In Town"
+// Generates a professional, print-ready A4 book PDF
+// ==============================================================================
+
+#let conf(
+  title: "",
+  author: "",
+  date: none,
+  doc,
+) = {
+  // Document metadata
+  set document(title: "$title$", author: "$author$")
+
+  // ---------------------------------------------------------------------------
+  // 1. FRONT COVER (Page 1: Full-bleed A4)
+  // ---------------------------------------------------------------------------
+  set page(
+    paper: "a4",
+    margin: 0pt,
+    header: none,
+    footer: none,
+  )
+  image("src/assets/front-cover.png", width: 100%, height: 100%, fit: "cover")
+
+  pagebreak()
+
+  // ---------------------------------------------------------------------------
+  // 2. TITLE PAGE (Page 2)
+  // ---------------------------------------------------------------------------
+  set page(
+    paper: "a4",
+    margin: (top: 35mm, bottom: 25mm, left: 25mm, right: 25mm),
+    header: none,
+    footer: none,
+  )
+  
+  align(center)[
+    #v(4cm)
+    #text(size: 26pt, weight: "bold")[#title]
+    #v(1.5cm)
+    #text(size: 18pt, weight: "bold")[#author]
+    #v(1fr)
+    #text(size: 10pt, fill: luma(80))[Copyright © 2026 #author. All rights reserved.]
+  ]
+
+  pagebreak()
+
+  // ---------------------------------------------------------------------------
+  // 3. INTERIOR PAGES (Acknowledgments, Chapters 1-17, About the Author)
+  // ---------------------------------------------------------------------------
+  set page(
+    paper: "a4",
+    margin: (top: 25mm, bottom: 25mm, left: 25mm, right: 25mm),
+    header: context {
+      let current-page = counter(page).get().first()
+      // Suppress header on first interior page (Acknowledgments)
+      if current-page > 1 {
+        align(center)[
+          #text(size: 8.5pt, fill: luma(110), tracking: 0.1em)[
+            #smallcaps[What Not To Do When There Is A Murder In Town]
+          ]
+        ]
+      }
+    },
+    footer: context {
+      align(center)[
+        #text(size: 9.5pt, fill: luma(60))[#counter(page).display("1")]
+      ]
+    },
+  )
+
+  // Reset page counter for interior reading flow
+  counter(page).update(1)
+
+  // Typography settings
+  set text(size: 11.5pt, lang: "en")
+  set par(
+    justify: false,
+    leading: 0.95em,
+    spacing: 1.4em,
+    first-line-indent: 0pt,
+  )
+
+  // Chapter Headings (Each chapter starts on a new page)
+  show heading.where(level: 1): it => {
+    pagebreak(weak: true)
+    v(1.8cm)
+    align(center)[
+      #text(size: 20pt, weight: "bold")[#it.body]
+    ]
+    v(1.2cm)
+  }
+
+  // Dividers (---)
+  show line: set align(center)
+
+  // Blockquotes / Poems
+  show quote: it => block(
+    inset: (left: 2.5em),
+    spacing: 1.4em,
+    it.body
+  )
+
+  doc
+
+  // ---------------------------------------------------------------------------
+  // 4. BACK COVER (Final Page: Full-bleed A4)
+  // ---------------------------------------------------------------------------
+  pagebreak()
+  set page(
+    paper: "a4",
+    margin: 0pt,
+    header: none,
+    footer: none,
+  )
+  image("src/assets/back-cover.png", width: 100%, height: 100%, fit: "cover")
+}
+
+#let horizontalRule = align(center)[#line(length: 40%, stroke: 0.5pt + luma(130))]
+#let divider = if "divider" in std { divider } else { horizontalRule }
+
+#show: doc => conf(
+  title: [$title$],
+  author: [$author$],
+  doc,
+)
+
+$body$

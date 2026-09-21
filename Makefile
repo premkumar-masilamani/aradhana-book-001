@@ -3,19 +3,21 @@
 # Builds standard reflowable EPUB 3 and print-ready PDF
 # ==============================================================================
 
-OUTPUT      := output
-SRC         := src
-METADATA    := $(SRC)/metadata.yaml
-FRONTMATTER := $(SRC)/frontmatter/acknowledgments.md
-CHAPTERS    := $(sort $(wildcard $(SRC)/chapters/*.md))
-BACKMATTER  := $(SRC)/backmatter/about-the-author.md $(SRC)/backmatter/back-cover.md
-CSS         := styles/style.css
-FRONT_COVER := $(SRC)/assets/front-cover.png
-BACK_COVER  := $(SRC)/assets/back-cover.png
+OUTPUT       := output
+SRC          := src
+METADATA     := $(SRC)/metadata.yaml
+FRONTMATTER  := $(SRC)/frontmatter/acknowledgments.md
+CHAPTERS     := $(sort $(wildcard $(SRC)/chapters/*.md))
+BACKMATTER   := $(SRC)/backmatter/about-the-author.md $(SRC)/backmatter/back-cover.md
+CSS          := styles/style.css
+FRONT_COVER  := $(SRC)/assets/front-cover.png
+BACK_COVER   := $(SRC)/assets/back-cover.png
+PDF_TEMPLATE := templates/pdf-template.typst
+PDF_INPUTS   := $(METADATA) $(FRONTMATTER) $(CHAPTERS) $(SRC)/backmatter/about-the-author.md
 
 .PHONY: all epub pdf clean check-quotes help
 
-all: epub
+all: epub pdf
 
 epub: $(OUTPUT)/book.epub
 
@@ -32,16 +34,13 @@ $(OUTPUT)/book.epub: $(METADATA) $(FRONTMATTER) $(CHAPTERS) $(BACKMATTER) $(CSS)
 
 pdf: $(OUTPUT)/book.pdf
 
-$(OUTPUT)/book.pdf: $(METADATA) $(SRC)/frontmatter/front-cover.md $(FRONTMATTER) $(CHAPTERS) $(BACKMATTER) $(FRONT_COVER) $(BACK_COVER)
+$(OUTPUT)/book.pdf: $(PDF_TEMPLATE) $(PDF_INPUTS) $(FRONT_COVER) $(BACK_COVER)
 	@mkdir -p $(OUTPUT)
-	PATH="/Library/TeX/texbin:$(PATH)" pandoc $(METADATA) $(SRC)/frontmatter/front-cover.md $(FRONTMATTER) $(CHAPTERS) $(BACKMATTER) \
-		-o $(OUTPUT)/book.pdf \
-		--pdf-engine=xelatex \
-		-V geometry:"paperwidth=148mm, paperheight=210mm, margin=20mm" \
-		--top-level-division=chapter \
-		--toc \
-		--resource-path=$(SRC):$(SRC)/assets
-	@echo "PDF successfully built: $(OUTPUT)/book.pdf"
+	pandoc $(PDF_INPUTS) \
+		--template=$(PDF_TEMPLATE) \
+		--pdf-engine=typst \
+		-o $(OUTPUT)/book.pdf
+	@echo "Printable A4 PDF successfully built: $(OUTPUT)/book.pdf"
 
 check-quotes:
 	@python3 scripts/check_quotes.py
@@ -51,7 +50,8 @@ clean:
 
 help:
 	@echo "Available targets:"
+	@echo "  make all          - Build both EPUB 3 ebook and printable A4 PDF"
 	@echo "  make epub         - Build EPUB 3 ebook"
-	@echo "  make pdf          - Build A5 print PDF (requires XeLaTeX)"
+	@echo "  make pdf          - Build printable A4 PDF (requires Typst)"
 	@echo "  make check-quotes - Verify straight quotes across all markdown files"
 	@echo "  make clean        - Remove build output"
