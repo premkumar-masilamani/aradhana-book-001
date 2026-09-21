@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1055 1491" width="1055" height="1491">
+  <defs>
+    <style>
+      .blurb-text {
+        font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+        font-size: 38px;
+        font-weight: 700;
+        fill: #152238;
+        text-anchor: middle;
+        line-height: 1.4;
+      }
+      .divider-line {
+        stroke: #152238;
+        stroke-width: 2.5;
+      }
+    </style>
+  </defs>
+
+  <!-- Back Cover Text Overlay -->
+  <g id="back-text">
+    <text x="527" y="270" class="blurb-text">Max has been living her best life</text>
+    <text x="527" y="325" class="blurb-text">with her friends Riana and Jack,</text>
+    <text x="527" y="380" class="blurb-text">but when a murder hits town,</text>
+    <text x="527" y="435" class="blurb-text">Max can&apos;t sit still.</text>
+
+    <!-- Decorative magnifying glass ornament -->
+    <line x1="430" y1="510" x2="495" y2="510" class="divider-line" />
+    <circle cx="522" cy="505" r="14" fill="none" stroke="#152238" stroke-width="3" />
+    <line x1="532" y1="515" x2="544" y2="527" stroke="#152238" stroke-width="3.5" stroke-linecap="round" />
+    <line x1="560" y1="510" x2="625" y2="510" class="divider-line" />
+
+    <text x="527" y="605" class="blurb-text">Read as the trio meets friends</text>
+    <text x="527" y="660" class="blurb-text">and foes in this thrilling kids&apos;</text>
+    <text x="527" y="715" class="blurb-text">mystery.</text>
+  </g>
+</svg>

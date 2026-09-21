@@ -1,0 +1,25 @@
+# Build Output
+output/
+dist/
+build/
+*.epub
+*.pdf
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor & IDE
+.vscode/
+.idea/
+*.swp
+*.bak
+
+# Temporary and Scratch Files
+tmp/
+/tmp/

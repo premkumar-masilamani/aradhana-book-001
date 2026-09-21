@@ -1,0 +1,153 @@
+/* ==========================================================================
+   EPUB Reflowable Stylesheet - Industry Standard Fiction Layout
+   ========================================================================== */
+
+/* 1. Page & Cover Resets (Full-bleed edge-to-edge covers) */
+@page {
+    margin: 0;
+    padding: 0;
+}
+
+body#cover,
+body.fullpage-cover-body {
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center;
+    background-color: #000000;
+}
+
+#cover-image,
+.fullpage-cover-container {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cover-image svg,
+.fullpage-cover-container svg {
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+/* Hide heading on dedicated full-page cover sections */
+.back-cover-section > h1,
+.front-cover-section > h1 {
+    display: none;
+}
+
+/* Back Cover full-bleed styling */
+section.back-cover-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.back-cover-section p {
+    margin: 0 !important;
+    padding: 0 !important;
+    text-indent: 0 !important;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img.fullpage-cover-image {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+}
+
+/* 2. Reader-Controlled Body Typography
+   NOTE: font-family and font-size are deliberately omitted here so that
+   the reader application (Apple Books, Kindle, Kobo, etc.) renders text
+   according to the reader's user preferences and system settings. */
+body {
+    margin: 5% 7%;
+    line-height: 1.5;
+}
+
+/* Standard fiction paragraph indentation */
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: justify;
+    text-indent: 1.5em;
+}
+
+/* Suppress indentation on opening paragraphs, scene breaks, and headings */
+h1 + p,
+h2 + p,
+h3 + p,
+hr + p,
+p.no-indent {
+    text-indent: 0;
+}
+
+/* 3. Headings & Chapter Breaks */
+h1 {
+    text-align: center;
+    margin-top: 2.5em;
+    margin-bottom: 1.5em;
+    font-weight: bold;
+    page-break-before: always;
+    break-before: page;
+}
+
+/* 4. Scene Breaks & Dividers */
+hr {
+    border: 0;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.35;
+    width: 45%;
+    margin: 1.8em auto;
+    page-break-after: avoid;
+}
+
+hr.ornamental {
+    border: none;
+    height: auto;
+    background: transparent;
+    text-align: center;
+    margin: 2em 0;
+}
+
+hr.ornamental::after {
+    content: "✦ ✦ ✦";
+    letter-spacing: 0.5em;
+    opacity: 0.6;
+}
+
+/* 5. Title Page & Backmatter */
+section.titlepage {
+    text-align: center;
+    margin-top: 20%;
+}
+
+section.titlepage h1.title {
+    margin-bottom: 0.5em;
+}
+
+section.titlepage p.author {
+    font-style: italic;
+    text-indent: 0;
+}
