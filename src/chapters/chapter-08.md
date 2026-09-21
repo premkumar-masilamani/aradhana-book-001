@@ -22,13 +22,17 @@ They searched for a while until Riana moved a photo with **Jesus Christ** on it.
 
 "Guys, I'm a genius!", says Riana excitedly.
 
-They lowered themselves into the staircase. On the table in the centre, a folded note was there. It read:
+They lowered themselves into the staircase.  
+
+On the table in the centre, a folded note was there.  
+
+It read:
 
 ---
 
 _Hello again, Idiots._
 
-_If you're wondering what my name is, the first five letters of the last name of the man in the photo you moved. Well dummies, your first clue is_ _**Mardley**_
+_If you're wondering what my name is, the first five letters of the last name of the man in the photo you moved. Well dummies, your first clue is_ _**Mardley**_.
 
 _Bad luck,_
 

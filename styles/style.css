@@ -76,7 +76,6 @@ p {
     margin-bottom: 0.85em;
     text-align: left;
     text-indent: 0 !important;
-    line-height: 1.5;
 }
 
 /* 3. Headings & Chapter Breaks */
@@ -105,7 +104,6 @@ h1::after {
 
 /* Suppress ornamental divider on Title Page and Back Cover */
 section.titlepage h1::after,
-section.titlepage h1.title::after,
 .back-cover-section h1::after {
     display: none !important;
     content: none !important;
@@ -122,24 +120,6 @@ hr {
     page-break-after: avoid;
 }
 
-hr.ornamental {
-    border: none;
-    height: auto;
-    background: transparent;
-    text-align: center;
-    margin: 2em 0;
-    overflow: visible;
-}
-
-hr.ornamental::after {
-    display: block;
-    content: "✧ ✧ ✧";
-    letter-spacing: 0.5em;
-    padding-left: 0.5em;
-    opacity: 0.6;
-    font-size: 1em;
-}
-
 /* 5. Title Page */
 section.titlepage {
     text-align: center;
@@ -151,8 +131,9 @@ section.titlepage {
     justify-content: space-between;
 }
 
-section.titlepage h1.title {
-    text-align: center;
+section.titlepage h1.title,
+h1.title {
+    text-align: center !important;
     font-size: 2em;
     font-weight: bold;
     margin-top: 0;
@@ -161,7 +142,10 @@ section.titlepage h1.title {
     break-before: avoid;
 }
 
-section.titlepage p.author {
+section.titlepage p.author,
+section.titlepage .author,
+p.author,
+.author {
     text-align: center !important;
     text-indent: 0 !important;
     font-size: 1.5em;
@@ -173,9 +157,12 @@ section.titlepage p.author {
 }
 
 section.titlepage div.rights,
-section.titlepage p.rights {
-    text-align: center;
-    text-indent: 0;
+section.titlepage p.rights,
+div.rights,
+p.rights,
+.rights {
+    text-align: center !important;
+    text-indent: 0 !important;
     font-size: 0.75em;
     opacity: 0.75;
     margin-top: auto;
@@ -191,6 +178,5 @@ blockquote {
 
 blockquote p {
     margin: 0;
-    line-height: 1.5;
     text-indent: 0 !important;
 }
