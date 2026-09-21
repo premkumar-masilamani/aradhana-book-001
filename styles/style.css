@@ -1,0 +1,182 @@
+/* ==========================================================================
+   EPUB Reflowable Stylesheet - Industry Standard Fiction Layout
+   ========================================================================== */
+
+/* 1. Page & Cover Resets */
+@page {
+    margin: 0;
+    padding: 0;
+}
+
+body#cover {
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center;
+    background-color: transparent !important;
+}
+
+#cover-image {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#cover-image svg {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 100vh;
+    height: auto;
+    width: auto;
+}
+
+/* Hide heading on dedicated full-page back cover section */
+.back-cover-section > h1 {
+    display: none;
+}
+
+/* Back Cover clean responsive styling (no black frames) */
+section.back-cover-section {
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center;
+    background-color: transparent !important;
+    page-break-before: always;
+    break-before: page;
+}
+
+section.back-cover-section p {
+    margin: 0 !important;
+    padding: 0 !important;
+    text-indent: 0 !important;
+    text-align: center;
+}
+
+img.fullpage-cover-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 98vh;
+    width: auto;
+    height: auto;
+}
+
+/* 2. Reader-Controlled Body Typography
+   NOTE: font-family and font-size are deliberately omitted so that
+   the reader application (Apple Books, Kindle, Kobo, etc.) renders text
+   according to user preferences and system settings. */
+body {
+    margin: 5% 7%;
+    line-height: 1.5;
+}
+
+/* Flush-left paragraphs with generous line and paragraph spacing (ideal for dialogue & conversations) */
+p {
+    margin-top: 0;
+    margin-bottom: 0.85em;
+    text-align: left;
+    text-indent: 0 !important;
+}
+
+/* 3. Headings & Chapter Breaks */
+h1 {
+    text-align: center;
+    margin-top: 2.5em;
+    margin-bottom: 1.5em;
+    font-weight: bold;
+    page-break-before: always;
+    break-before: page;
+}
+
+/* Ornamental star divider below chapter titles (Hollow Star Trio) */
+h1::after {
+    display: block;
+    content: "✧ ✧ ✧";
+    font-size: 0.65em;
+    letter-spacing: 0.5em;
+    padding-left: 0.5em;
+    opacity: 0.6;
+    margin-top: 1em;
+    margin-bottom: 0.8em;
+    font-weight: normal;
+    text-align: center;
+}
+
+/* Suppress ornamental divider on Title Page and Back Cover */
+section.titlepage h1::after,
+.back-cover-section h1::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* 4. Scene Breaks & Dividers */
+hr {
+    border: 0;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.35;
+    width: 45%;
+    margin: 1.8em auto;
+    page-break-after: avoid;
+}
+
+/* 5. Title Page */
+section.titlepage {
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 12vh;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+section.titlepage h1.title,
+h1.title {
+    text-align: center !important;
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0.4em;
+    page-break-before: avoid;
+    break-before: avoid;
+}
+
+section.titlepage p.author,
+section.titlepage .author,
+p.author,
+.author {
+    text-align: center !important;
+    text-indent: 0 !important;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-style: normal;
+    letter-spacing: 0.05em;
+    margin-top: 0.8em;
+    margin-bottom: 0;
+}
+
+section.titlepage div.rights,
+section.titlepage p.rights,
+div.rights,
+p.rights,
+.rights {
+    text-align: center !important;
+    text-indent: 0 !important;
+    font-size: 0.75em;
+    opacity: 0.75;
+    margin-top: auto;
+    padding-top: 30vh;
+    margin-bottom: 2em;
+}
+
+/* 6. Blockquotes & Poetry */
+blockquote {
+    margin: 1.2em 0 1.2em 2em;
+    padding: 0;
+}
+
+blockquote p {
+    margin: 0;
+    text-indent: 0 !important;
+}
