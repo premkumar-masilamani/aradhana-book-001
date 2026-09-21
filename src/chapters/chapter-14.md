@@ -1,4 +1,4 @@
-# Chapter 14: The Stitches
+# 14. The Stitches
 
 After a few minutes, there was a thud on the door.
 

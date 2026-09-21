@@ -1,4 +1,4 @@
-# Chapter 8: The Note
+# 8. The Note
 
 While they were driving to **Saint Nicolas Church**,
 

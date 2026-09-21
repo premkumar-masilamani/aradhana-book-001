@@ -1,4 +1,4 @@
-# Chapter 6: The Phone Call
+# 6. The Phone Call
 
 "Oliver was Elizabeth's son. Elizabeth married Victor Avinap. Oliver wasn't always... _social_. He hated everybody, and vice versa. He mostly hated his parents and wanted money. Victor was a CEO of a polyester company. He was very well paid. They lived comfortably until Elizabeth's death.", Max took a breath and continued…
 

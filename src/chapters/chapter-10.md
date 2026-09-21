@@ -1,4 +1,4 @@
-# Chapter 10: The Murderer
+# 10. The Murderer
 
 "My father is the murderer! But how, why him?", Max said sad and confused.
 

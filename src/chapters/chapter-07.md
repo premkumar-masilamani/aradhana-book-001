@@ -1,4 +1,4 @@
-# Chapter 7: The Crypt
+# 7. The Crypt
 
 "What do you mean, you don't know?" Jack questioned.
 

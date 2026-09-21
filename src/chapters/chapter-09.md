@@ -1,4 +1,4 @@
-# Chapter 9: The Poem
+# 9. The Poem
 
 Max was amazed. She couldn't believe that somehow Jack had found out this clue.
 

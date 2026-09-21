@@ -1,4 +1,4 @@
-# Chapter 16: Boom
+# 16. Boom
 
 Jack drove. Max talked. Riana was calm.
 

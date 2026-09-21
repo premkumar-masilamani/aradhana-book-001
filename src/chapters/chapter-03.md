@@ -1,4 +1,4 @@
-# Chapter 3: The Medicine
+# 3. The Medicine
 
 "We have to make a plan without Jack" Max said anxiously.
 

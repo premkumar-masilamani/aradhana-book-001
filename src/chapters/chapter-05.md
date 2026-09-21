@@ -1,4 +1,4 @@
-# Chapter 5: A Situation
+# 5. A Situation
 
 "What! Another murder!" Max exclaimed.
 

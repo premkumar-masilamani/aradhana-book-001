@@ -89,14 +89,13 @@ h1 {
     break-before: page;
 }
 
-/* Ornamental star divider below chapter titles */
+/* Ornamental divider below chapter titles (Option 2: Whisker Rule with Hollow Diamond) */
 h1::after {
     display: block;
-    content: "✦ ✦ ✦";
-    font-size: 0.6em;
-    letter-spacing: 0.5em;
-    padding-left: 0.5em;
-    opacity: 0.6;
+    content: "──────  ◇  ──────";
+    font-size: 0.65em;
+    letter-spacing: 0.05em;
+    opacity: 0.5;
     margin-top: 1em;
     margin-bottom: 0.8em;
     font-weight: normal;
@@ -133,11 +132,10 @@ hr.ornamental {
 
 hr.ornamental::after {
     display: block;
-    content: "✦ ✦ ✦";
-    letter-spacing: 0.5em;
-    padding-left: 0.5em;
-    opacity: 0.6;
-    font-size: 1em;
+    content: "──────  ◇  ──────";
+    letter-spacing: 0.05em;
+    opacity: 0.5;
+    font-size: 0.9em;
 }
 
 /* 5. Title Page */

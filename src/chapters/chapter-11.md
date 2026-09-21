@@ -1,4 +1,4 @@
-# Chapter 11: The "Why"
+# 11. The "Why"
 
 When Max woke up, she was in a hospital.
 

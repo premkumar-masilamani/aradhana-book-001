@@ -1,4 +1,4 @@
-# Chapter 13: All we can do is pray
+# 13. All we can do is pray
 
 The first blink of light came out.
 

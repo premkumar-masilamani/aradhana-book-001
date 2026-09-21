@@ -1,4 +1,4 @@
-# Chapter 12: The First Hallucination
+# 12. The First Hallucination
 
 Max screamed. Riana jerked up. Jack almost crashed.
 

@@ -1,4 +1,4 @@
-# Chapter 15: The Killer
+# 15. The Killer
 
 When Max woke up, it was raining.
 

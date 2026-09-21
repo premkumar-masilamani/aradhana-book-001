@@ -1,4 +1,4 @@
-# Chapter 1: The Murder at the National Park
+# 1. The Murder at the National Park
 
 "Mom!" shouts Maxine.
 

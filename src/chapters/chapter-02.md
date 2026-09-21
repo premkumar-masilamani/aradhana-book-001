@@ -1,4 +1,4 @@
-# Chapter 2: The Bloody Ear
+# 2. The Bloody Ear
 
 "Max, please just leave this to the police," Jack said.
 

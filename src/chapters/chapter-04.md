@@ -1,4 +1,4 @@
-# Chapter 4: The Interrogation
+# 4. The Interrogation
 
 "_No no no no no..._ ", Max thought in her head.
 
