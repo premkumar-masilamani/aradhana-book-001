@@ -67,7 +67,7 @@ img.fullpage-cover-image {
    according to user preferences and system settings. */
 body {
     margin: 5% 7%;
-    line-height: 1.8;
+    line-height: 1.5;
 }
 
 /* Flush-left paragraphs with generous line and paragraph spacing (ideal for dialogue & conversations) */
@@ -76,7 +76,7 @@ p {
     margin-bottom: 0.85em;
     text-align: left;
     text-indent: 0 !important;
-    line-height: 1.8;
+    line-height: 1.5;
 }
 
 /* 3. Headings & Chapter Breaks */
@@ -165,6 +165,6 @@ blockquote {
 
 blockquote p {
     margin: 0;
-    line-height: 1.8;
+    line-height: 1.5;
     text-indent: 0 !important;
 }
