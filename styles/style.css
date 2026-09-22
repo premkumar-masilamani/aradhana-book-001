@@ -124,11 +124,14 @@ hr {
 section.titlepage {
     text-align: center;
     box-sizing: border-box;
-    padding-top: 12vh;
-    min-height: 80vh;
+    margin: 0;
+    padding: 0;
+    min-height: 85vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    page-break-inside: avoid;
+    break-inside: avoid;
 }
 
 section.titlepage h1.title,
@@ -136,8 +139,8 @@ h1.title {
     text-align: center !important;
     font-size: 2em;
     font-weight: bold;
-    margin-top: 0;
-    margin-bottom: 0.4em;
+    margin-top: 2.2em;
+    margin-bottom: 0;
     page-break-before: avoid;
     break-before: avoid;
 }
@@ -148,11 +151,11 @@ p.author,
 .author {
     text-align: center !important;
     text-indent: 0 !important;
-    font-size: 1.5em;
+    font-size: 1.4em;
     font-weight: bold;
     font-style: normal;
     letter-spacing: 0.05em;
-    margin-top: 0.8em;
+    margin-top: 6em;
     margin-bottom: 0;
 }
 
@@ -165,9 +168,30 @@ p.rights,
     text-indent: 0 !important;
     font-size: 0.75em;
     opacity: 0.75;
-    margin-top: auto;
-    padding-top: 30vh;
+    margin-top: 16em;
     margin-bottom: 2em;
+}
+
+/* Progressive enhancement for modern e-readers supporting flexbox */
+@supports (display: flex) {
+    section.titlepage {
+        min-height: 88vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    section.titlepage h1.title {
+        margin-top: 2em;
+        margin-bottom: 0;
+    }
+    section.titlepage p.author {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    section.titlepage div.rights {
+        margin-top: auto;
+        margin-bottom: 2em;
+    }
 }
 
 /* 6. Blockquotes & Poetry */
