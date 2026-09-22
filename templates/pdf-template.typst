@@ -49,7 +49,7 @@
   // ---------------------------------------------------------------------------
   // 3. INTERIOR PAGES (Acknowledgments, Chapters 1-17, About the Author)
   // ---------------------------------------------------------------------------
-  // Margins: 28mm on A4 scales to ~20mm on A5, allowing 5mm spine binding gutter + 15mm margin
+  // Margins: 28mm left/right spine and outer margins, 25mm top/bottom
   set page(
     paper: "a4",
     margin: (top: 25mm, bottom: 25mm, left: 28mm, right: 28mm),
@@ -74,7 +74,7 @@
   // Reset page counter for interior reading flow
   counter(page).update(1)
 
-  // Typography settings: 15.5pt on A4 scales down by 70.7% to standard 11pt on A5
+  // Typography settings
   set text(size: 15.5pt, lang: "en")
   set par(
     justify: false,

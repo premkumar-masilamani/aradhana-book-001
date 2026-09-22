@@ -31,9 +31,7 @@ This repository follows industry-standard digital publishing and manuscript conv
 ├── styles/
 │   └── style.css                # Reflowable EPUB CSS (reader-controlled typography, ornamental breaks)
 ├── templates/
-│   └── pdf-template.typst       # Typst template for printable A4/A5 book PDF
-├── scripts/
-│   └── check_quotes.py          # Linter to verify straight quotes across manuscript
+│   └── pdf-template.typst       # Typst template for printable A4 book PDF
 └── output/                      # Generated book outputs (EPUB / PDF)
 ```
 
@@ -49,7 +47,6 @@ This repository follows industry-standard digital publishing and manuscript conv
   ```bash
   brew install typst
   ```
-- **Python 3** (standard on macOS)
 
 ---
 
@@ -76,17 +73,11 @@ This repository follows industry-standard digital publishing and manuscript conv
   make pdf
   ```
   Generates `output/Aradhana_Mystery_Novel_001.pdf` configured for:
-  - **A4 reading & A5 book binding**: Set to `15.5pt` body font, which scales by $70.71\%$ ($1/\sqrt{2}$) to standard novel `11.0pt` when printed in A5.
-  - **Spine gutter margins**: `28mm` margins scale to `20mm` on A5, ensuring text never falls into the binding fold.
+  - **Typography & Layout**: Set to `15.5pt` body font with generous line spacing and clean typography.
+  - **Margins**: `28mm` side margins and `25mm` top/bottom margins.
   - Full-bleed edge-to-edge front and back cover pages.
   - Title page with author and copyright notice.
   - Running headers (small-caps book title) and centered page numbers.
-
-- **Verify Quotes**:
-  ```bash
-  make check-quotes
-  ```
-  Audits all chapters and front/back matter to ensure 100% straight quotation marks.
 
 - **Clean Build Output**:
   ```bash
