@@ -71,16 +71,13 @@ jobs:
 
           echo "Publishing GitHub Release for tag: $TAG_NAME"
 
+          printf "Automated release of **What Not To Do When There Is A Murder In Town** by Aradhana Premkumar.\n\n### Direct Downloads\n- [Aradhana_Mystery_Novel_001.epub](https://github.com/%s/releases/latest/download/Aradhana_Mystery_Novel_001.epub) *(Reflowable EPUB 3 ebook)*\n- [Aradhana_Mystery_Novel_001.pdf](https://github.com/%s/releases/latest/download/Aradhana_Mystery_Novel_001.pdf) *(Printable A4 book PDF)*\n- [Aradhana_Mystery_Novel_001_Booklet.pdf](https://github.com/%s/releases/latest/download/Aradhana_Mystery_Novel_001_Booklet.pdf) *(Booklet duplex print PDF)*\n" "${{ github.repository }}" "${{ github.repository }}" "${{ github.repository }}" > release_notes.md
+
           gh release create "$TAG_NAME" \
             output/Aradhana_Mystery_Novel_001.epub \
             output/Aradhana_Mystery_Novel_001.pdf \
             output/Aradhana_Mystery_Novel_001_Booklet.pdf \
             --target "${{ github.sha }}" \
             --title "Release $TAG_NAME" \
-            --notes "Automated release of **What Not To Do When There Is A Murder In Town** by Aradhana Premkumar.
-
-### Direct Downloads
-- [Aradhana_Mystery_Novel_001.epub](https://github.com/${{ github.repository }}/releases/download/${TAG_NAME}/Aradhana_Mystery_Novel_001.epub) *(Reflowable EPUB 3 ebook)*
-- [Aradhana_Mystery_Novel_001.pdf](https://github.com/${{ github.repository }}/releases/download/${TAG_NAME}/Aradhana_Mystery_Novel_001.pdf) *(Printable A4 book PDF)*
-- [Aradhana_Mystery_Novel_001_Booklet.pdf](https://github.com/${{ github.repository }}/releases/download/${TAG_NAME}/Aradhana_Mystery_Novel_001_Booklet.pdf) *(Booklet duplex print PDF)*" \
+            --notes-file release_notes.md \
             --latest
