@@ -5,7 +5,7 @@
 
 SRC              := src
 OUTPUT           := output
-BOOK_NAME        := Aradhana_Mystery_Novel_001
+BOOK_NAME        ?= Aradhana_Mystery_Novel_001
 EPUB_OUT         := $(OUTPUT)/$(BOOK_NAME).epub
 PDF_OUT          := $(OUTPUT)/$(BOOK_NAME).pdf
 BOOKLET_OUT      := $(OUTPUT)/$(BOOK_NAME)_Booklet.pdf
@@ -16,9 +16,12 @@ CSS              := styles/style.css
 PDF_TEMPLATE     := templates/pdf-template.typst
 BOOKLET_TEMPLATE := templates/booklet-pdf-template.typst
 
-.PHONY: all epub pdf booklet clean help
+.PHONY: all epub pdf booklet name clean help
 
 all: epub pdf booklet
+
+name:
+	@echo $(BOOK_NAME)
 
 epub: $(EPUB_OUT)
 
@@ -62,4 +65,8 @@ help:
 	@echo "  make epub         - Build EPUB 3 ebook"
 	@echo "  make pdf          - Build printable A4 PDF"
 	@echo "  make booklet      - Build printable booklet PDF (odd-page starts, back & front covers at end)"
+	@echo "  make name         - Print the current BOOK_NAME variable value"
 	@echo "  make clean        - Remove build output"
+	@echo ""
+	@echo "Variables:"
+	@echo "  BOOK_NAME         - Base filename for artifacts (default: Aradhana_Mystery_Novel_001)"

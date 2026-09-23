@@ -81,6 +81,9 @@ This repository follows industry-standard digital publishing and manuscript conv
   2. `output/Aradhana_Mystery_Novel_001.pdf` (Standard reading A4 PDF)
   3. `output/Aradhana_Mystery_Novel_001_Booklet.pdf` (Booklet print PDF with odd-page section starts and covers at end)
 
+  > [!TIP]
+  > The base filename is controlled by the `BOOK_NAME` variable (default: `Aradhana_Mystery_Novel_001`). You can override it via environment or command-line: `make all BOOK_NAME=Custom_Title`.
+
 - **Build EPUB 3 Ebook**:
   ```bash
   make epub
