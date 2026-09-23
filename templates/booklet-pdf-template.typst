@@ -1,7 +1,34 @@
 // ==============================================================================
-// Typst Template for "What Not To Do When There Is A Murder In Town"
-// Generates a professional, print-ready A4 book PDF
+// Typst Template for Booklet Printing: "What Not To Do When There Is A Murder In Town"
+// Conditions:
+// 1. All title pages (book title, acknowledgments, about the author, chapter beginnings)
+//    start on ODD page numbers (1, 3, 5, etc.). Blank pages inserted automatically before them.
+// 2. Back cover and front cover (in that order) placed at the end of the PDF.
 // ==============================================================================
+
+#show pagebreak: it => {
+  if it.to == "odd" or it.to == "even" {
+    [#metadata(none)<empty-page-start>] + it + [#metadata(none)<empty-page-end>]
+  } else {
+    it
+  }
+}
+
+#let is-page-empty() = {
+  let page-num = here().position().page
+  let markers = query(selector(<empty-page-start>).or(selector(<empty-page-end>)))
+  let empty = false
+  for i in range(0, markers.len(), step: 2) {
+    if i + 1 < markers.len() {
+      let start-p = markers.at(i).location().position().page
+      let end-p = markers.at(i + 1).location().position().page
+      if start-p < page-num and page-num < end-p {
+        empty = true
+      }
+    }
+  }
+  empty
+}
 
 #let conf(
   title: "",
@@ -13,20 +40,7 @@
   set document(title: "$title$", author: "$author$")
 
   // ---------------------------------------------------------------------------
-  // 1. FRONT COVER (Page 1: Full-bleed A4)
-  // ---------------------------------------------------------------------------
-  set page(
-    paper: "a4",
-    margin: 0pt,
-    header: none,
-    footer: none,
-  )
-  image("src/assets/front-cover.png", width: 100%, height: 100%, fit: "cover")
-
-  pagebreak()
-
-  // ---------------------------------------------------------------------------
-  // 2. TITLE PAGE (Page 2)
+  // 1. BOOK TITLE PAGE (Page 1: Odd page)
   // ---------------------------------------------------------------------------
   set page(
     paper: "a4",
@@ -44,19 +58,18 @@
     #text(size: 12pt, fill: luma(80))[Copyright © 2026 #author. All rights reserved.]
   ]
 
-  pagebreak()
+  pagebreak(to: "odd")
 
   // ---------------------------------------------------------------------------
-  // 3. INTERIOR PAGES (Acknowledgments, Chapters 1-17, About the Author)
+  // 2. INTERIOR PAGES (Acknowledgments, Chapters 1-17, About the Author)
   // ---------------------------------------------------------------------------
-  // Margins: 28mm left/right spine and outer margins, 25mm top/bottom
   set page(
     paper: "a4",
     margin: (top: 25mm, bottom: 25mm, left: 28mm, right: 28mm),
     header: context {
       let current-page = counter(page).get().first()
-      // Suppress header on first interior page (Acknowledgments)
-      if current-page > 1 {
+      let is-chapter-page = query(heading.where(level: 1)).any(h => h.location().position().page == current-page)
+      if not is-chapter-page and not is-page-empty() {
         align(center)[
           #text(size: 10pt, fill: luma(110), tracking: 0.1em)[
             #smallcaps[What Not To Do When There Is A Murder In Town]
@@ -65,14 +78,13 @@
       }
     },
     footer: context {
-      align(center)[
-        #text(size: 11pt, fill: luma(60))[#counter(page).display("1")]
-      ]
+      if not is-page-empty() {
+        align(center)[
+          #text(size: 11pt, fill: luma(60))[#counter(page).display("1")]
+        ]
+      }
     },
   )
-
-  // Reset page counter for interior reading flow
-  counter(page).update(1)
 
   // Typography settings
   set text(size: 15.5pt, lang: "en")
@@ -83,9 +95,9 @@
     first-line-indent: 0pt,
   )
 
-  // Chapter Headings (Each chapter starts on a new page)
+  // Chapter Headings & Section Headings (Always start on ODD page numbers)
   show heading.where(level: 1): it => {
-    pagebreak(weak: true)
+    pagebreak(weak: true, to: "odd")
     v(1.4cm)
     align(center)[
       #text(size: 24pt, weight: "bold")[#it.body]
@@ -108,9 +120,9 @@
   doc
 
   // ---------------------------------------------------------------------------
-  // 4. BACK COVER (Final Page: Full-bleed A4)
+  // 3. COVERS AT THE END (Back Cover then Front Cover)
   // ---------------------------------------------------------------------------
-  pagebreak()
+  pagebreak(to: "odd")
   set page(
     paper: "a4",
     margin: 0pt,
@@ -118,6 +130,15 @@
     footer: none,
   )
   image("src/assets/back-cover.png", width: 100%, height: 100%, fit: "cover")
+
+  pagebreak()
+  set page(
+    paper: "a4",
+    margin: 0pt,
+    header: none,
+    footer: none,
+  )
+  image("src/assets/front-cover.png", width: 100%, height: 100%, fit: "cover")
 }
 
 #let horizontalRule = align(center)[#line(length: 40%, stroke: 0.5pt + luma(130))]

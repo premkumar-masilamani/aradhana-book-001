@@ -4,12 +4,30 @@ A young adult murder mystery novel by **Aradhana Premkumar**.
 
 ---
 
+## 📥 Download Latest Book Releases
+
+Direct public download links for the latest published edition:
+
+| Format | Description | Direct Download |
+| :--- | :--- | :--- |
+| **EPUB 3** | Standard reflowable ebook for Apple Books, Kindle, Kobo, etc. | [Aradhana_Mystery_Novel_001.epub](https://github.com/premkumar-masilamani/aradhana-book-001/releases/latest/download/Aradhana_Mystery_Novel_001.epub) |
+| **Printable PDF** | High-resolution A4 reading & printing edition | [Aradhana_Mystery_Novel_001.pdf](https://github.com/premkumar-masilamani/aradhana-book-001/releases/latest/download/Aradhana_Mystery_Novel_001.pdf) |
+| **Booklet PDF** | Formatted for duplex printing & folding (odd-page starts, covers at end) | [Aradhana_Mystery_Novel_001_Booklet.pdf](https://github.com/premkumar-masilamani/aradhana-book-001/releases/latest/download/Aradhana_Mystery_Novel_001_Booklet.pdf) |
+
+> [!TIP]
+> The links above automatically point to the latest release assets published whenever changes are merged into `main`.
+
+---
+
 ## Project Structure
 
 This repository follows industry-standard digital publishing and manuscript conventions:
 
 ```text
 .
+├── .github/
+│   └── workflows/
+│       └── release.yml          # GitHub Actions workflow for automated releases
 ├── Makefile                     # Build pipeline for EPUB and PDF
 ├── README.md                    # Project documentation
 ├── .gitignore                   # Ignores build artifacts and OS caches
@@ -31,8 +49,9 @@ This repository follows industry-standard digital publishing and manuscript conv
 ├── styles/
 │   └── style.css                # Reflowable EPUB CSS (reader-controlled typography, ornamental breaks)
 ├── templates/
-│   └── pdf-template.typst       # Typst template for printable A4 book PDF
-└── output/                      # Generated book outputs (EPUB / PDF)
+│   ├── pdf-template.typst           # Typst template for standard printable A4 book PDF
+│   └── booklet-pdf-template.typst   # Typst template for booklet PDF (odd page starts, covers at end)
+└── output/                          # Generated book outputs (EPUB / PDF)
 ```
 
 ---
@@ -52,10 +71,18 @@ This repository follows industry-standard digital publishing and manuscript conv
 
 ## Building the Book
 
-- **Build Everything (EPUB & PDF)**:
+- **Build Everything (EPUB, Standard PDF & Booklet PDF)**:
   ```bash
-  make all
+  make
   ```
+  *(or `make all`)*
+  Produces all three publishing formats in `output/`:
+  1. `output/Aradhana_Mystery_Novel_001.epub` (Reflowable EPUB 3 ebook)
+  2. `output/Aradhana_Mystery_Novel_001.pdf` (Standard reading A4 PDF)
+  3. `output/Aradhana_Mystery_Novel_001_Booklet.pdf` (Booklet print PDF with odd-page section starts and covers at end)
+
+  > [!TIP]
+  > The base filename is controlled by the `BOOK_NAME` variable (default: `Aradhana_Mystery_Novel_001`). You can override it via environment or command-line: `make all BOOK_NAME=Custom_Title`.
 
 - **Build EPUB 3 Ebook**:
   ```bash
@@ -79,7 +106,26 @@ This repository follows industry-standard digital publishing and manuscript conv
   - Title page with author and copyright notice.
   - Running headers (small-caps book title) and centered page numbers.
 
+- **Build Booklet PDF (Odd-Page Starts & Covers at End)**:
+  ```bash
+  make booklet
+  ```
+  Generates `output/Aradhana_Mystery_Novel_001_Booklet.pdf` customized for booklet duplex printing:
+  - **Odd-Page Starts**: Every major section (Book Title, Acknowledgments, Chapters 1–17, and About the Author) starts strictly on odd page numbers (`1, 3, 5, 9, ...`). If a section ends on an odd page, a clean blank page is automatically inserted before the next section.
+  - **Covers at the End**: The Back Cover and Front Cover (in that exact order) are placed on the final pages (`47` and `48`) to form the outer cover wrap.
+  - **Clean Typography**: Running headers are automatically suppressed on blank pages and chapter opening pages, appearing only on interior continuation pages.
+
 - **Clean Build Output**:
   ```bash
   make clean
   ```
+
+---
+
+## 🚀 Continuous Integration & Automated Releases
+
+A GitHub Actions workflow (`.github/workflows/release.yml`) automates the compilation and release process:
+
+- **Pull Requests**: Every PR against `main` automatically builds all 3 formats with Pandoc and Typst to verify layout integrity, and attaches the compiled outputs as workflow artifacts for testing.
+- **Merge to Main**: When a PR is merged into `main`, the workflow compiles the book and automatically creates a new GitHub Release with the tag `v1.0.<run_number>` marked as `--latest`.
+- **Public Downloads**: The release assets are instantly available worldwide via the permanent public URLs listed in the [Download Latest Book Releases](#-download-latest-book-releases) section above.
