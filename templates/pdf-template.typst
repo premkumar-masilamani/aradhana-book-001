@@ -121,6 +121,7 @@
 }
 
 #let horizontalRule = align(center)[#line(length: 40%, stroke: 0.5pt + luma(130))]
+#let horizontalrule = horizontalRule
 #let divider = if "divider" in std { divider } else { horizontalRule }
 
 #show: doc => conf(
