@@ -4,7 +4,7 @@
 
 "Oliver knew Emily. When he was in 9th grade, Emily was in 1st grade. He used to pick on her, fool her, mock her.", Max said disappointingly.
 
-"He lied... Luke lied!... Louis Amiaga isn't real!. He must have been very loyal to whoever he's working for!" Jack realized.
+"He lied... Luke lied!... Louis Smith isn't real!. He must have been very loyal to whoever he's working for!" Jack realized.
 
 "We're so stupid!… Why, why, why, why, why did we let him free?!" Riana raged.
 

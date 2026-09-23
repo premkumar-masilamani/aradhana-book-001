@@ -4,12 +4,30 @@ A young adult murder mystery novel by **Aradhana Premkumar**.
 
 ---
 
+## 📥 Download Latest Book Releases
+
+Direct public download links for the latest published edition:
+
+| Format | Description | Direct Download |
+| :--- | :--- | :--- |
+| **EPUB 3** | Standard reflowable ebook for Apple Books, Kindle, Kobo, etc. | [Aradhana_Mystery_Novel_001.epub](https://github.com/premkumar-masilamani/aradhana-book-001/releases/latest/download/Aradhana_Mystery_Novel_001.epub) |
+| **Printable PDF** | High-resolution A4 reading & printing edition | [Aradhana_Mystery_Novel_001.pdf](https://github.com/premkumar-masilamani/aradhana-book-001/releases/latest/download/Aradhana_Mystery_Novel_001.pdf) |
+| **Booklet PDF** | Formatted for duplex printing & folding (odd-page starts, covers at end) | [Aradhana_Mystery_Novel_001_Booklet.pdf](https://github.com/premkumar-masilamani/aradhana-book-001/releases/latest/download/Aradhana_Mystery_Novel_001_Booklet.pdf) |
+
+> [!TIP]
+> The links above automatically point to the latest release assets published whenever changes are merged into `main`.
+
+---
+
 ## Project Structure
 
 This repository follows industry-standard digital publishing and manuscript conventions:
 
 ```text
 .
+├── .github/
+│   └── workflows/
+│       └── release.yml          # GitHub Actions workflow for automated releases
 ├── Makefile                     # Build pipeline for EPUB and PDF
 ├── README.md                    # Project documentation
 ├── .gitignore                   # Ignores build artifacts and OS caches
@@ -98,3 +116,13 @@ This repository follows industry-standard digital publishing and manuscript conv
   ```bash
   make clean
   ```
+
+---
+
+## 🚀 Continuous Integration & Automated Releases
+
+A GitHub Actions workflow (`.github/workflows/release.yml`) automates the compilation and release process:
+
+- **Pull Requests**: Every PR against `main` automatically builds all 3 formats with Pandoc and Typst to verify layout integrity, and attaches the compiled outputs as workflow artifacts for testing.
+- **Merge to Main**: When a PR is merged into `main`, the workflow compiles the book and automatically creates a new GitHub Release with the tag `v1.0.<run_number>` marked as `--latest`.
+- **Public Downloads**: The release assets are instantly available worldwide via the permanent public URLs listed in the [Download Latest Book Releases](#-download-latest-book-releases) section above.

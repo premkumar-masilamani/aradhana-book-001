@@ -58,8 +58,8 @@ clean:
 
 help:
 	@echo "Available targets:"
-	@echo "  make all          - Build all 3 artifacts (EPUB 3, printable A4 PDF, and booklet PDF)"
+	@echo "  make all          - Build all 3 artifacts (EPUB 3, printable A4 PDF, and a printable booklet PDF)"
 	@echo "  make epub         - Build EPUB 3 ebook"
-	@echo "  make pdf          - Build printable A4 PDF (requires Typst)"
-	@echo "  make booklet      - Build booklet PDF (odd-page starts, back & front covers at end)"
+	@echo "  make pdf          - Build printable A4 PDF"
+	@echo "  make booklet      - Build printable booklet PDF (odd-page starts, back & front covers at end)"
 	@echo "  make clean        - Remove build output"

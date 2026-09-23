@@ -56,7 +56,7 @@ Even though Jack wasn't the patient getting stitches, he still groaned.
 
 Riana didn't even pay attention to the stitching because she had dozed off; she didn't feel an ounce of pain, it seemed.
 
-Max sooner or later finished stiching and woke Riana up.
+Max sooner or later finished stitching and woke Riana up.
 
 5:00 PM., huh.
 
